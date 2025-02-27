@@ -149,14 +149,12 @@
     <div id="alert" class="alert success">Copied successfully!</div>
   </div>
 
-
-
 <script>
 
 let replacementRules=[]
 
 
-fetch("https://api.jsonbin.io/v3/qs/67c04ee6e41b4d34e49dc528")
+fetch("https://api.npoint.io/e9defce24ecf197c6473")
   .then(response => response.json())
   .then((response) => {
     console.log(response.record.replacementRules);
@@ -191,7 +189,8 @@ window.processReplacements = async function () {
     console.log(_0x3b2486);
     _0x4a50a1.innerHTML = _0x3b2486;
   };
-  window.copyText = async function () {
+
+window.copyText = async function () {
     const _0x2450ce = document.getElementById("editor");
     try {
       let _0x590089 = _0x2450ce.innerHTML;
@@ -413,6 +412,10 @@ window.onload = function () {
 document.getElementById("loginContainer").classList.remove("hidden");
 document.getElementById("editorContainer").classList.add("hidden");
 
+// Define the clearEditor function
+function clearEditor() {
+    document.getElementById("editor").innerHTML = "";
+}
 
 </script>
 </body>
