@@ -228,9 +228,6 @@ window.processReplacements = async function () {
     if (event.ctrlKey && (event.keyCode == "U".charCodeAt(0))) return false; // Ctrl+U
   };
 
-
-
-
 /*
 url:https://jsonbin.io/quick-store
 
@@ -331,6 +328,7 @@ url:https://jsonbin.io/quick-store
   ]
 } 
 */
+
     const USERS = [
         { username: "admin", password: "1234" },
         { username: "harsha", password: "1234" },
@@ -347,8 +345,17 @@ url:https://jsonbin.io/quick-store
         if (user) {
             // Generate a unique session ID
             const sessionId = Math.random().toString(36).substring(2);
+            const previousSession = localStorage.getItem(`${user.username}_session`);
+
+            // Invalidate previous session if it exists
+            if (previousSession) {
+                localStorage.removeItem(previousSession);
+            }
+
+            // Store new session ID
             localStorage.setItem("loggedInUser", user.username);
             localStorage.setItem(SESSION_KEY, sessionId);
+            localStorage.setItem(`${user.username}_session`, sessionId);
             sessionStorage.setItem("currentSession", sessionId);
             showEditor();
         } else {
@@ -357,6 +364,10 @@ url:https://jsonbin.io/quick-store
     }
 
     function logout() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+            localStorage.removeItem(`${loggedInUser}_session`);
+        }
         localStorage.removeItem("loggedInUser");
         localStorage.removeItem(SESSION_KEY);
         sessionStorage.removeItem("currentSession");
@@ -416,7 +427,5 @@ url:https://jsonbin.io/quick-store
         checkSession();
     }
 </script>
-
-
 </body>
 </html>
