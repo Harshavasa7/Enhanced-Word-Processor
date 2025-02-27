@@ -402,13 +402,17 @@ window.addEventListener("storage", function (event) {
     }
 });
 
-// Auto-check for active session on page load
-if (localStorage.getItem("loggedInUser")) {
-    const activeSession = localStorage.getItem(SESSION_KEY);
-    sessionStorage.setItem("currentSession", activeSession);
-    showEditor();
-    checkSession();
-}
+// Step 1: Clear session data on page load to force login every time
+window.onload = function () {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("activeSession");
+    sessionStorage.removeItem("currentSession");
+};
+
+// Step 2: Only show login page on load
+document.getElementById("loginContainer").classList.remove("hidden");
+document.getElementById("editorContainer").classList.add("hidden");
+
 
 </script>
 </body>
