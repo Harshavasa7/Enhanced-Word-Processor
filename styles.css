@@ -1,10 +1,48 @@
 /* Global Styles */
+:root {
+    --primary-color: #4361ee;
+    --primary-hover: #3a56d4;
+    --danger-color: #ef476f;
+    --danger-hover: #d23d63;
+    --success-color: #06d6a0;
+    --success-hover: #05c091;
+    --dark-bg: rgba(33, 37, 41, 0.92);
+    --light-text: #f8f9fa;
+    --input-bg: #f1f3f5;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: url("image.jpg") no-repeat center center fixed;
     background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: -1;
 }
 
 /* Hidden Elements */
@@ -14,103 +52,304 @@ body {
 
 /* Login Page */
 .login-container {
-    max-width: 300px;
-    margin: 100px auto;
-    background: rgba(50, 48, 51, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.login-container input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.login-container button {
     width: 100%;
-    padding: 10px;
-    background-color: #0083bf;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    max-width: 380px;
+    margin: 0 auto;
+    perspective: 1000px;
 }
 
-.login-container button:hover {
-    background-color: #ff0000;
+.login-card {
+    background: var(--dark-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    transform-style: preserve-3d;
+    animation: cardEntrance 0.8s ease-out;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) rotateX(5deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: var(--light-text);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.login-decoration {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: #333;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.input-focus-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+    transition: var(--transition);
+}
+
+.form-group input:focus ~ .input-focus-effect {
+    width: 100%;
+}
+
+/* 3D Buttons */
+.btn-3d {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: var(--transition);
+    transform-style: preserve-3d;
+    box-shadow: 0 6px 0 #2a3990, 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:hover {
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 #2a3990, 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #2a3990, 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    transition: var(--transition);
+}
+
+.btn-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: var(--transition);
+}
+
+.btn-3d:hover::before {
+    transform: translateX(100%);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    box-shadow: 0 6px 0 #c62f53, 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger:hover {
+    box-shadow: 0 4px 0 #c62f53, 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger:active {
+    box-shadow: 0 0 0 #c62f53, 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    box-shadow: 0 6px 0 #05a77c, 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success:hover {
+    box-shadow: 0 4px 0 #05a77c, 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success:active {
+    box-shadow: 0 0 0 #05a77c, 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 0 #2a3990, 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 4px 0 #2a3990, 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    box-shadow: 0 0 0 #2a3990, 0 0 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Editor Page */
 .container {
+    width: 100%;
     max-width: 800px;
     margin: 20px auto;
-    background-color: rgba(50, 48, 51, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
+    background-color: var(--dark-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .editor-container {
     position: relative;
-    margin-bottom: 10px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.editor-container:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
 }
 
 #editor {
-    width: 95%;
+    width: 100%;
     height: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
     background-color: white;
     overflow-y: auto;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+#editor:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 .clear-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: none;
+    background: rgba(239, 71, 111, 0.1);
     border: none;
-    color: #999;
+    color: var(--danger-color);
     cursor: pointer;
-    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.clear-btn:hover {
+    background: rgba(239, 71, 111, 0.2);
+    transform: rotate(90deg);
+    opacity: 1;
 }
 
 /* Buttons */
 .buttons {
+    display: flex;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #0083bf;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #ff0000;
+.buttons button {
+    flex: 1;
 }
 
 /* Alert */
 .alert {
     display: none;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
     text-align: center;
+    font-weight: 500;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .success {
-    background-color: #dff0d8;
-    color: #3c763d;
+    background-color: rgba(6, 214, 160, 0.2);
+    color: #06d6a0;
+    border-left: 4px solid #06d6a0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container, .login-container {
+        width: 90%;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
 }
