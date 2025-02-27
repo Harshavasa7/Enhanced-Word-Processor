@@ -1,1 +1,293 @@
-function _0x15c5(){const _0x1762c1=['add','892590GWPxXU','getItem','onkeydown','value','split','keyCode','shiftKey','clipboard','warn','133842LLaDRQ','innerHTML','admin','<p><br></p>','ctrlKey','169210AZHVPa','addEventListener','error','username','_session','Error\x20fetching\x20JSON:','find','remove','join','loginContainer','3584329TrbyCW','Using\x20fallback\x20copy\x20method:','trim','copyText','then','1234','preventDefault','removeItem','activeSession','log','text/plain','loggedInUser','storage','classList','24GolvSO','map','28hdJDnE','text/html','innerText','15nDhPsy','password2','random','replacementRules','<br>','catch','editor','setItem','957590DmjIyy','</p>','charCodeAt','1798614UbHODl','hidden','55wQaPmo','replace','<span\x20data-math-type=\x22asciimath\x22>','harsha','user2','</span>','28460EkKjBr','currentSession','length','getElementById','<strong>$1</strong>','\x5c$&','toString','editorContainer','json'];_0x15c5=function(){return _0x1762c1;};return _0x15c5();}const _0x126b53=_0x36db;(function(_0x3eb7a8,_0x5354db){const _0x12360b=_0x36db,_0x4683ec=_0x3eb7a8();while(!![]){try{const _0x414a0d=-parseInt(_0x12360b(0x1d0))/0x1+parseInt(_0x12360b(0x1c5))/0x2+-parseInt(_0x12360b(0x19b))/0x3*(-parseInt(_0x12360b(0x1ba))/0x4)+parseInt(_0x12360b(0x1bd))/0x5*(-parseInt(_0x12360b(0x192))/0x6)+-parseInt(_0x12360b(0x1aa))/0x7+-parseInt(_0x12360b(0x1b8))/0x8*(-parseInt(_0x12360b(0x1c8))/0x9)+parseInt(_0x12360b(0x1a0))/0xa*(-parseInt(_0x12360b(0x1ca))/0xb);if(_0x414a0d===_0x5354db)break;else _0x4683ec['push'](_0x4683ec['shift']());}catch(_0x5c442a){_0x4683ec['push'](_0x4683ec['shift']());}}}(_0x15c5,0x4def8));let replacementRules=[];fetch('https://api.npoint.io/e9defce24ecf197c6473')['then'](_0x4f425a=>_0x4f425a[_0x126b53(0x190)]())[_0x126b53(0x1ae)](_0x13e1e1=>{const _0x22e5f0=_0x126b53;console[_0x22e5f0(0x1b3)](_0x13e1e1['record']['replacementRules']),replacementRules=_0x13e1e1['record'][_0x22e5f0(0x1c0)];})[_0x126b53(0x1c2)](_0x50b13b=>console[_0x126b53(0x1a2)](_0x126b53(0x1a5),_0x50b13b)),window['processReplacements']=async function(){const _0x27bc3d=_0x126b53,_0x4e55dd=document[_0x27bc3d(0x1d3)](_0x27bc3d(0x1c3));let _0x3e1fa4=_0x4e55dd[_0x27bc3d(0x1bc)];replacementRules['forEach'](_0x22560b=>{const _0x26a147=_0x27bc3d;if(_0x22560b[_0x26a147(0x1a6)]){const _0x15ed7a=new RegExp(_0x22560b[_0x26a147(0x1a6)][_0x26a147(0x1cb)](/[.*+?^${}()|[\]\\]/g,_0x26a147(0x1d5)),'g');_0x3e1fa4=_0x3e1fa4[_0x26a147(0x1cb)](_0x15ed7a,_0x22560b[_0x26a147(0x1cb)]);}}),_0x3e1fa4=_0x3e1fa4[_0x27bc3d(0x1cb)](/\\\[\s*([\s\S]*?)\s*\\\]/g,(_0x5d0871,_0x15a2eb)=>{const _0x55a60e=_0x27bc3d;return'\x5c('+_0x15a2eb[_0x55a60e(0x1ac)]()+'\x5c)';}),_0x3e1fa4=_0x3e1fa4['replace'](/\\\(\s*([\s\S]*?)\s*\\\)/g,(_0x2ce0c6,_0x408007)=>{const _0x27ecb9=_0x27bc3d;return _0x27ecb9(0x1cc)+_0x408007[_0x27ecb9(0x1ac)]()+_0x27ecb9(0x1cf);}),_0x3e1fa4=_0x3e1fa4[_0x27bc3d(0x1cb)](/\*\*(.*?)\*\*/g,_0x27bc3d(0x1d4)),_0x3e1fa4=_0x3e1fa4[_0x27bc3d(0x1cb)](/^[ ]{2,}- (.*)/gm,'<ul><li\x20style=\x22list-style-type:\x20circle;\x22>$1</li></ul>'),_0x3e1fa4=_0x3e1fa4['replace'](/^\s*- (.*)/gm,'<ul><li\x20style=\x22list-style-type:\x20disc;\x22>$1</li></ul>'),_0x3e1fa4=_0x3e1fa4['replace'](/^###\s*(.*)/gm,_0x27bc3d(0x1d4)),_0x3e1fa4=_0x3e1fa4[_0x27bc3d(0x1cb)](/\n/g,_0x27bc3d(0x1c1)),console[_0x27bc3d(0x1b3)](_0x3e1fa4),_0x4e55dd[_0x27bc3d(0x19c)]=_0x3e1fa4;},window[_0x126b53(0x1ad)]=async function(){const _0x29ccfb=_0x126b53,_0x372260=document[_0x29ccfb(0x1d3)](_0x29ccfb(0x1c3));try{let _0x223c1e=_0x372260[_0x29ccfb(0x19c)],_0xdfb4f4=_0x372260[_0x29ccfb(0x1bc)],_0x5a55b7=_0x223c1e[_0x29ccfb(0x196)](/<br\s*\/?>/i),_0x213f9a=_0x5a55b7[_0x29ccfb(0x1b9)](_0x4edd2b=>{const _0x272e65=_0x29ccfb;return _0x4edd2b=_0x4edd2b['trim'](),_0x4edd2b[_0x272e65(0x1d2)]>0x0?'<p>'+_0x4edd2b+_0x272e65(0x1c6):_0x272e65(0x19e);})[_0x29ccfb(0x1a8)]('\x0a');const _0x47a8f8=new ClipboardItem({'text/html':new Blob([_0x213f9a],{'type':_0x29ccfb(0x1bb)}),'text/plain':new Blob([_0xdfb4f4],{'type':_0x29ccfb(0x1b4)})});await navigator[_0x29ccfb(0x199)]['write']([_0x47a8f8]);}catch(_0x3d8a0e){console[_0x29ccfb(0x19a)](_0x29ccfb(0x1ab),_0x3d8a0e);}},document['addEventListener']('contextmenu',_0x3c0485=>_0x3c0485[_0x126b53(0x1b0)]()),document[_0x126b53(0x194)]=function(_0x5afc96){const _0x4ace2c=_0x126b53;if(_0x5afc96[_0x4ace2c(0x197)]==0x7b)return!0x1;if(_0x5afc96[_0x4ace2c(0x19f)]&&_0x5afc96[_0x4ace2c(0x198)]&&_0x5afc96[_0x4ace2c(0x197)]=='I'[_0x4ace2c(0x1c7)](0x0))return!0x1;if(_0x5afc96['ctrlKey']&&_0x5afc96['shiftKey']&&_0x5afc96[_0x4ace2c(0x197)]=='C'['charCodeAt'](0x0))return!0x1;if(_0x5afc96[_0x4ace2c(0x19f)]&&_0x5afc96['shiftKey']&&_0x5afc96[_0x4ace2c(0x197)]=='J'[_0x4ace2c(0x1c7)](0x0))return!0x1;if(_0x5afc96[_0x4ace2c(0x19f)]&&_0x5afc96['keyCode']=='U'['charCodeAt'](0x0))return!0x1;};function _0x36db(_0x2270e7,_0x47836a){const _0x15c5da=_0x15c5();return _0x36db=function(_0x36db5d,_0x478b11){_0x36db5d=_0x36db5d-0x190;let _0x31d22f=_0x15c5da[_0x36db5d];return _0x31d22f;},_0x36db(_0x2270e7,_0x47836a);}const USERS=[{'username':_0x126b53(0x19d),'password':'1234'},{'username':_0x126b53(0x1cd),'password':_0x126b53(0x1af)},{'username':_0x126b53(0x1ce),'password':_0x126b53(0x1be)}],SESSION_KEY=_0x126b53(0x1b2);function login(){const _0x47492c=_0x126b53,_0x4959d0=document[_0x47492c(0x1d3)]('username')['value'],_0x102e57=document[_0x47492c(0x1d3)]('password')[_0x47492c(0x195)],_0x38955b=USERS[_0x47492c(0x1a6)](_0x31555d=>_0x31555d[_0x47492c(0x1a3)]===_0x4959d0&&_0x31555d['password']===_0x102e57);if(_0x38955b){const _0x1658d0=Math[_0x47492c(0x1bf)]()[_0x47492c(0x1d6)](0x24)['substring'](0x2),_0x22f450=localStorage[_0x47492c(0x193)](_0x38955b['username']+_0x47492c(0x1a4));_0x22f450&&localStorage[_0x47492c(0x1b1)](_0x22f450),localStorage['setItem'](_0x47492c(0x1b5),_0x38955b[_0x47492c(0x1a3)]),localStorage[_0x47492c(0x1c4)](SESSION_KEY,_0x1658d0),localStorage['setItem'](_0x38955b[_0x47492c(0x1a3)]+'_session',_0x1658d0),sessionStorage[_0x47492c(0x1c4)]('currentSession',_0x1658d0),showEditor();}else alert('Invalid\x20credentials!');}function logout(){const _0x230e93=_0x126b53,_0x27dd01=localStorage[_0x230e93(0x193)]('loggedInUser');_0x27dd01&&localStorage['removeItem'](_0x27dd01+_0x230e93(0x1a4)),localStorage[_0x230e93(0x1b1)]('loggedInUser'),localStorage[_0x230e93(0x1b1)](SESSION_KEY),sessionStorage[_0x230e93(0x1b1)](_0x230e93(0x1d1)),location['reload']();}function showEditor(){const _0x13fbed=_0x126b53;document[_0x13fbed(0x1d3)](_0x13fbed(0x1a9))[_0x13fbed(0x1b7)][_0x13fbed(0x191)]('hidden'),document['getElementById']('editorContainer')[_0x13fbed(0x1b7)][_0x13fbed(0x1a7)]('hidden');}function checkSession(){setInterval(()=>{const _0x32a114=_0x36db,_0x2bb7f4=localStorage[_0x32a114(0x193)](SESSION_KEY),_0x23a6ab=sessionStorage['getItem'](_0x32a114(0x1d1));(!_0x2bb7f4||_0x2bb7f4!==_0x23a6ab)&&logout();},0x7d0);}window[_0x126b53(0x1a1)](_0x126b53(0x1b6),function(_0x1f968c){const _0x51fe53=_0x126b53;if(_0x1f968c['key']===SESSION_KEY){const _0xd241c1=localStorage['getItem'](SESSION_KEY),_0x28370b=sessionStorage[_0x51fe53(0x193)]('currentSession');(!_0xd241c1||_0xd241c1!==_0x28370b)&&logout();}}),window['onload']=function(){const _0x2a978c=_0x126b53;localStorage[_0x2a978c(0x1b1)]('loggedInUser'),localStorage['removeItem']('activeSession'),sessionStorage[_0x2a978c(0x1b1)](_0x2a978c(0x1d1));},document[_0x126b53(0x1d3)](_0x126b53(0x1a9))[_0x126b53(0x1b7)][_0x126b53(0x1a7)](_0x126b53(0x1c9)),document['getElementById'](_0x126b53(0x1d7))['classList'][_0x126b53(0x191)]('hidden');function clearEditor(){const _0x50ce8f=_0x126b53;document[_0x50ce8f(0x1d3)](_0x50ce8f(0x1c3))[_0x50ce8f(0x19c)]='';}
+let replacementRules=[]
+
+
+fetch("https://api.npoint.io/e9defce24ecf197c6473")
+  .then(response => response.json())
+  .then((response) => {
+    console.log(response.record.replacementRules);
+    replacementRules=response.record.replacementRules // Now list1 is assigned to this variable
+  })
+  .catch(error => console.error("Error fetching JSON:", error));
+
+
+
+window.processReplacements = async function () {
+    
+    const _0x4a50a1 = document.getElementById("editor");
+    let _0x3b2486 = _0x4a50a1.innerText;
+    
+    replacementRules.forEach(_0x40a2aa => {
+      if (_0x40a2aa.find) {
+        const _0x31f043 = new RegExp(_0x40a2aa.find.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), 'g');
+        _0x3b2486 = _0x3b2486.replace(_0x31f043, _0x40a2aa.replace);
+      }
+    });
+    _0x3b2486 = _0x3b2486.replace(/\\\[\s*([\s\S]*?)\s*\\\]/g, (_0x435399, _0x155db7) => {
+      return "\\(" + _0x155db7.trim() + "\\)";
+    });
+    _0x3b2486 = _0x3b2486.replace(/\\\(\s*([\s\S]*?)\s*\\\)/g, (_0x159e25, _0x152aa5) => {
+      return "<span data-math-type=\"asciimath\">" + _0x152aa5.trim() + '</span>';
+    });
+    _0x3b2486 = _0x3b2486.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    _0x3b2486 = _0x3b2486.replace(/^[ ]{2,}- (.*)/gm, "<ul><li style=\"list-style-type: circle;\">$1</li></ul>");
+    _0x3b2486 = _0x3b2486.replace(/^\s*- (.*)/gm, "<ul><li style=\"list-style-type: disc;\">$1</li></ul>");
+    _0x3b2486 = _0x3b2486.replace(/^###\s*(.*)/gm, "<strong>$1</strong>");
+    _0x3b2486 = _0x3b2486.replace(/\n/g, "<br>");
+    console.log(_0x3b2486);
+    _0x4a50a1.innerHTML = _0x3b2486;
+  };
+
+window.copyText = async function () {
+    const _0x2450ce = document.getElementById("editor");
+    try {
+      let _0x590089 = _0x2450ce.innerHTML;
+      let _0x183473 = _0x2450ce.innerText;
+      let _0xfe5da9 = _0x590089.split(/<br\s*\/?>/i);
+      let _0x3b4bfd = _0xfe5da9.map(_0x5d8d0a => {
+        _0x5d8d0a = _0x5d8d0a.trim();
+        return _0x5d8d0a.length > 0x0 ? "<p>" + _0x5d8d0a + '</p>' : "<p><br></p>";
+      }).join("\n");
+      const _0x33adb4 = new ClipboardItem({
+        'text/html': new Blob([_0x3b4bfd], {
+          'type': 'text/html'
+        }),
+        'text/plain': new Blob([_0x183473], {
+          'type': "text/plain"
+        })
+      });
+      await navigator.clipboard.write([_0x33adb4]);
+    } catch (_0x3655ab) {
+      console.warn("Using fallback copy method:", _0x3655ab);
+      
+    }
+  };
+
+// block developer tools
+
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+  document.onkeydown = function (event) {
+    if (event.keyCode == 123) return false; // F12
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == "I".charCodeAt(0))) return false; // Ctrl+Shift+I
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == "C".charCodeAt(0))) return false; // Ctrl+Shift+C
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == "J".charCodeAt(0))) return false; // Ctrl+Shift+J
+    if (event.ctrlKey && (event.keyCode == "U".charCodeAt(0))) return false; // Ctrl+U
+  };
+
+/*
+url:https://jsonbin.io/quick-store
+
+{
+  "replacementRules": [
+    {
+      "find": "\\]",
+      "replace": "\\)"
+    },
+    {
+      "find": "\\[",
+      "replace": "\\("
+    },
+    {
+      "find": "\\;",
+      "replace": ""
+    },
+    {
+      "find": "\\,",
+      "replace": ""
+    },
+    {
+      "find": "---",
+      "replace": ""
+    },
+    {
+      "find": "\\begin{bmartrix}",
+      "replace": "[["
+    },
+    {
+      "find": "\\end{bmatrix}",
+      "replace": "]]"
+    },
+    {
+      "find": "&",
+      "replace": ","
+    },
+    {
+      "find": "\\\\",
+      "replace": "],["
+    },
+    {
+      "find": "\\bigl(",
+      "replace": " "
+    },
+    {
+      "find": "\\bigr)",
+      "replace": " "
+    },
+    {
+      "find": ":",
+      "replace": " "
+    },
+    {
+      "find": "\\}",
+      "replace": ""
+    },
+    {
+      "find": "\\{",
+      "replace": ""
+    },
+    {
+      "find": "\\begin{bmatrix}",
+      "replace": "[["
+    },
+    {
+      "find": "\\begin{vmatrix} ",
+      "replace": ""
+    },
+    {
+      "find": "@",
+      "replace": ""
+    },
+    {
+      "find": "\\tfrac{",
+      "replace": "\\frac{"
+    },
+    {
+      "find": "\\Bigl(",
+      "replace": ""
+    },
+    {
+      "find": "\\Bigr)",
+      "replace": ""
+    },
+    {
+      "find": "\\bigl[",
+      "replace": ""
+    },
+    {
+      "find": "\\bigr]",
+      "replace": ""
+    },
+    {
+      "find": "\\left[",
+      "replace": "\\right]"
+    }
+  ]
+} 
+*/
+const USERS = [
+  { username: "admin", password: "1234" },
+  { username: "harsha", password: "1234" },
+  { username: "user2", password: "password2" }
+];
+
+const SESSION_KEY = "activeSession"; // Key for session tracking
+
+function login() {
+  const enteredUsername = document.getElementById("username").value;
+  const enteredPassword = document.getElementById("password").value;
+
+  const user = USERS.find(user => user.username === enteredUsername && user.password === enteredPassword);
+
+  if (user) {
+      // Get any previous session
+      const previousSession = localStorage.getItem(`${user.username}_session`);
+
+      // Invalidate previous session if it exists
+      if (previousSession) {
+          localStorage.removeItem(previousSession);
+      }
+
+      // Generate a new session ID
+      const sessionId = Math.random().toString(36).substring(2);
+
+      // Store session details
+      localStorage.setItem("loggedInUser", user.username);
+      localStorage.setItem(SESSION_KEY, sessionId);
+      localStorage.setItem(`${user.username}_session`, sessionId);
+      sessionStorage.setItem("currentSession", sessionId);
+
+      // Redirect to the editor
+      showEditor();
+
+      // Start session check
+      checkSession();
+  } else {
+      alert("Invalid credentials!");
+  }
+}
+
+function logout() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (loggedInUser) {
+      localStorage.removeItem(`${loggedInUser}_session`);
+  }
+
+  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem(SESSION_KEY);
+  sessionStorage.removeItem("currentSession");
+
+  // Refresh page to show login
+  location.reload();
+}
+
+function showEditor() {
+  document.getElementById("loginContainer").classList.add("hidden");
+  document.getElementById("editorContainer").classList.remove("hidden");
+}
+
+function checkSession() {
+  setInterval(() => {
+      const activeSession = localStorage.getItem(SESSION_KEY);
+      const currentSession = sessionStorage.getItem("currentSession");
+
+      if (!activeSession || activeSession !== currentSession) {
+          logout();
+      }
+  }, 2000);
+}
+
+// Detect login changes across tabs/devices and log out if necessary
+window.addEventListener("storage", function (event) {
+  if (event.key === SESSION_KEY) {
+      const activeSession = localStorage.getItem(SESSION_KEY);
+      const currentSession = sessionStorage.getItem("currentSession");
+
+      if (!activeSession || activeSession !== currentSession) {
+          logout();
+      }
+  }
+});
+
+// Step 1: Clear session data on page load if invalid
+window.onload = function () {
+  const activeSession = localStorage.getItem(SESSION_KEY);
+  const currentSession = sessionStorage.getItem("currentSession");
+
+  if (!activeSession || activeSession !== currentSession) {
+      // Remove only inactive sessions
+      localStorage.removeItem("loggedInUser");
+      localStorage.removeItem(SESSION_KEY);
+      sessionStorage.removeItem("currentSession");
+  }
+
+  // Always show login page initially
+  document.getElementById("loginContainer").classList.remove("hidden");
+  document.getElementById("editorContainer").classList.add("hidden");
+};
+
+// Define the clearEditor function
+function clearEditor() {
+  document.getElementById("editor").innerHTML = "";
+}
+
+// Block Developer Tools
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+document.onkeydown = function (event) {
+  if (event.keyCode == 123) return false; // F12
+  if (event.ctrlKey && event.shiftKey && (event.keyCode == "I".charCodeAt(0))) return false; // Ctrl+Shift+I
+  if (event.ctrlKey && event.shiftKey && (event.keyCode == "C".charCodeAt(0))) return false; // Ctrl+Shift+C
+  if (event.ctrlKey && event.shiftKey && (event.keyCode == "J".charCodeAt(0))) return false; // Ctrl+Shift+J
+  if (event.ctrlKey && (event.keyCode == "U".charCodeAt(0))) return false; // Ctrl+U
+};
