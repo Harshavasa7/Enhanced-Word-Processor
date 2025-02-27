@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMESQNA - Enhanced Word Processor</title>
+  <style>
+    /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("image.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* Hidden Elements */
+    .hidden {
+        display: none;
+    }
+
+    /* Login Page */
+    .login-container {
+        max-width: 300px;
+        margin: 100px auto;
+        background: rgba(50, 48, 51, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .login-container input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    .login-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #0083bf;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .login-container button:hover {
+        background-color: #ff0000;
+    }
+
+    /* Editor Page */
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: rgba(50, 48, 51, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .editor-container {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    #editor {
+        width: 95%;
+        height: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+        overflow-y: auto;
+    }
+
+    .clear-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #999;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    /* Buttons */
+    .buttons {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #0083bf;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #ff0000;
+    }
+
+    /* Alert */
+    .alert {
+        display: none;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .success {
+        background-color: #dff0d8;
+        color: #3c763d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Form -->
+  <div class="login-container" id="loginContainer">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Main Editor Section -->
+  <div class="container hidden" id="editorContainer">
+    <div class="buttons">
+      <button onclick="logout()">Logout</button>
+      <button onclick="processReplacements()">Replace</button>
+      <button onclick="copyText()">Copy</button>
+    </div>
+
+    <div class="editor-container">
+      <div id="editor" contenteditable="true"></div>
+      <button class="clear-btn" onclick="clearEditor()">✕</button>
+    </div>
+
+    <div id="alert" class="alert success">Copied successfully!</div>
+  </div>
+
+
+
+<script>
+
+let replacementRules=[]
+
+
+fetch("https://api.jsonbin.io/v3/qs/67c04ee6e41b4d34e49dc528")
+  .then(response => response.json())
+  .then((response) => {
+    console.log(response.record.replacementRules);
+    replacementRules=response.record.replacementRules // Now list1 is assigned to this variable
+  })
+  .catch(error => console.error("Error fetching JSON:", error));
+
+
+
+window.processReplacements = async function () {
+    
+    const _0x4a50a1 = document.getElementById("editor");
+    let _0x3b2486 = _0x4a50a1.innerText;
+    
+    replacementRules.forEach(_0x40a2aa => {
+      if (_0x40a2aa.find) {
+        const _0x31f043 = new RegExp(_0x40a2aa.find.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), 'g');
+        _0x3b2486 = _0x3b2486.replace(_0x31f043, _0x40a2aa.replace);
+      }
+    });
+    _0x3b2486 = _0x3b2486.replace(/\\\[\s*([\s\S]*?)\s*\\\]/g, (_0x435399, _0x155db7) => {
+      return "\\(" + _0x155db7.trim() + "\\)";
+    });
+    _0x3b2486 = _0x3b2486.replace(/\\\(\s*([\s\S]*?)\s*\\\)/g, (_0x159e25, _0x152aa5) => {
+      return "<span data-math-type=\"asciimath\">" + _0x152aa5.trim() + '</span>';
+    });
+    _0x3b2486 = _0x3b2486.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    _0x3b2486 = _0x3b2486.replace(/^[ ]{2,}- (.*)/gm, "<ul><li style=\"list-style-type: circle;\">$1</li></ul>");
+    _0x3b2486 = _0x3b2486.replace(/^\s*- (.*)/gm, "<ul><li style=\"list-style-type: disc;\">$1</li></ul>");
+    _0x3b2486 = _0x3b2486.replace(/^###\s*(.*)/gm, "<strong>$1</strong>");
+    _0x3b2486 = _0x3b2486.replace(/\n/g, "<br>");
+    console.log(_0x3b2486);
+    _0x4a50a1.innerHTML = _0x3b2486;
+  };
+  window.copyText = async function () {
+    const _0x2450ce = document.getElementById("editor");
+    try {
+      let _0x590089 = _0x2450ce.innerHTML;
+      let _0x183473 = _0x2450ce.innerText;
+      let _0xfe5da9 = _0x590089.split(/<br\s*\/?>/i);
+      let _0x3b4bfd = _0xfe5da9.map(_0x5d8d0a => {
+        _0x5d8d0a = _0x5d8d0a.trim();
+        return _0x5d8d0a.length > 0x0 ? "<p>" + _0x5d8d0a + '</p>' : "<p><br></p>";
+      }).join("\n");
+      const _0x33adb4 = new ClipboardItem({
+        'text/html': new Blob([_0x3b4bfd], {
+          'type': 'text/html'
+        }),
+        'text/plain': new Blob([_0x183473], {
+          'type': "text/plain"
+        })
+      });
+      await navigator.clipboard.write([_0x33adb4]);
+    } catch (_0x3655ab) {
+      console.warn("Using fallback copy method:", _0x3655ab);
+      
+    }
+  };
+
+// block developer tools
+
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+  document.onkeydown = function (event) {
+    if (event.keyCode == 123) return false; // F12
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == "I".charCodeAt(0))) return false; // Ctrl+Shift+I
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == "C".charCodeAt(0))) return false; // Ctrl+Shift+C
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == "J".charCodeAt(0))) return false; // Ctrl+Shift+J
+    if (event.ctrlKey && (event.keyCode == "U".charCodeAt(0))) return false; // Ctrl+U
+  };
+
+
+
+
+/*
+url:https://jsonbin.io/quick-store
+
+{
+  "replacementRules": [
+    {
+      "find": "\\]",
+      "replace": "\\)"
+    },
+    {
+      "find": "\\[",
+      "replace": "\\("
+    },
+    {
+      "find": "\\;",
+      "replace": ""
+    },
+    {
+      "find": "\\,",
+      "replace": ""
+    },
+    {
+      "find": "---",
+      "replace": ""
+    },
+    {
+      "find": "\\begin{bmartrix}",
+      "replace": "[["
+    },
+    {
+      "find": "\\end{bmatrix}",
+      "replace": "]]"
+    },
+    {
+      "find": "&",
+      "replace": ","
+    },
+    {
+      "find": "\\\\",
+      "replace": "],["
+    },
+    {
+      "find": "\\bigl(",
+      "replace": " "
+    },
+    {
+      "find": "\\bigr)",
+      "replace": " "
+    },
+    {
+      "find": ":",
+      "replace": " "
+    },
+    {
+      "find": "\\}",
+      "replace": ""
+    },
+    {
+      "find": "\\{",
+      "replace": ""
+    },
+    {
+      "find": "\\begin{bmatrix}",
+      "replace": "[["
+    },
+    {
+      "find": "\\begin{vmatrix} ",
+      "replace": ""
+    },
+    {
+      "find": "@",
+      "replace": ""
+    },
+    {
+      "find": "\\tfrac{",
+      "replace": "\\frac{"
+    },
+    {
+      "find": "\\Bigl(",
+      "replace": ""
+    },
+    {
+      "find": "\\Bigr)",
+      "replace": ""
+    },
+    {
+      "find": "\\bigl[",
+      "replace": ""
+    },
+    {
+      "find": "\\bigr]",
+      "replace": ""
+    },
+    {
+      "find": "\\left[",
+      "replace": "\\right]"
+    }
+  ]
+} 
+*/
+    const USERS = [
+        { username: "admin", password: "1234" },
+        { username: "harsha", password: "1234" },
+        { username: "user2", password: "password2" }
+    ];
+    const SESSION_KEY = "activeSession"; // Key for session tracking
+
+    function login() {
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+
+        const user = USERS.find(user => user.username === enteredUsername && user.password === enteredPassword);
+
+        if (user) {
+            // Generate a unique session ID
+            const sessionId = Math.random().toString(36).substring(2);
+            localStorage.setItem("loggedInUser", user.username);
+            localStorage.setItem(SESSION_KEY, sessionId);
+            sessionStorage.setItem("currentSession", sessionId);
+            showEditor();
+        } else {
+            alert("Invalid credentials!");
+        }
+    }
+
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        localStorage.removeItem(SESSION_KEY);
+        sessionStorage.removeItem("currentSession");
+        location.reload();
+    }
+
+    function showEditor() {
+        document.getElementById("loginContainer").classList.add("hidden");
+        document.getElementById("editorContainer").classList.remove("hidden");
+    }
+
+    function checkSession() {
+        setInterval(() => {
+            const activeSession = localStorage.getItem(SESSION_KEY);
+            const currentSession = sessionStorage.getItem("currentSession");
+
+            if (!activeSession || activeSession !== currentSession) {
+                logout();
+            }
+        }, 2000);
+    }
+
+    function clearEditor() {
+        document.getElementById("editor").innerHTML = "";
+    }
+
+    function copyText() {
+        const editor = document.getElementById("editor");
+        navigator.clipboard.writeText(editor.innerText).then(() => {
+            alert("Copied successfully!");
+        });
+    }
+
+    function processReplacements() {
+        let text = document.getElementById("editor").innerText;
+        text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        document.getElementById("editor").innerHTML = text;
+    }
+
+    // Detect login changes across tabs/devices and log out if necessary
+    window.addEventListener("storage", function (event) {
+        if (event.key === SESSION_KEY) {
+            const activeSession = localStorage.getItem(SESSION_KEY);
+            const currentSession = sessionStorage.getItem("currentSession");
+
+            if (!activeSession || activeSession !== currentSession) {
+                logout();
+            }
+        }
+    });
+
+    // Auto-check for active session on page load
+    if (localStorage.getItem("loggedInUser")) {
+        const activeSession = localStorage.getItem(SESSION_KEY);
+        sessionStorage.setItem("currentSession", activeSession);
+        showEditor();
+        checkSession();
+    }
+</script>
+
+
+</body>
+</html>
