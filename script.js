@@ -180,36 +180,31 @@ const USERS = [
   { username: "user2", password: "password2" }
 ];
 
-const SESSION_KEY = "activeSession"; // Key for session tracking
+const SESSION_KEY = "activeSession";  // Key for active session tracking
+const USER_KEY = "loggedInUser";      // Key for storing logged-in user
 
 function login() {
   const enteredUsername = document.getElementById("username").value;
   const enteredPassword = document.getElementById("password").value;
 
-  const user = USERS.find(user => user.username === enteredUsername && user.password === enteredPassword);
+  const user = USERS.find(u => u.username === enteredUsername && u.password === enteredPassword);
 
   if (user) {
-      // Get any previous session
-      const previousSession = localStorage.getItem(`${user.username}_session`);
+      const newSessionId = generateSessionId();
 
-      // Invalidate previous session if it exists
+      // Check if there's already an active session for this user
+      const previousSession = localStorage.getItem(`${user.username}_session`);
       if (previousSession) {
-          localStorage.removeItem(previousSession);
+          localStorage.removeItem(previousSession); // Invalidate old session
       }
 
-      // Generate a new session ID
-      const sessionId = Math.random().toString(36).substring(2);
+      // Store new session details
+      localStorage.setItem(USER_KEY, user.username);
+      localStorage.setItem(SESSION_KEY, newSessionId);
+      localStorage.setItem(`${user.username}_session`, newSessionId);
+      sessionStorage.setItem("currentSession", newSessionId);
 
-      // Store session details
-      localStorage.setItem("loggedInUser", user.username);
-      localStorage.setItem(SESSION_KEY, sessionId);
-      localStorage.setItem(`${user.username}_session`, sessionId);
-      sessionStorage.setItem("currentSession", sessionId);
-
-      // Redirect to the editor
       showEditor();
-
-      // Start session check
       checkSession();
   } else {
       alert("Invalid credentials!");
@@ -217,18 +212,17 @@ function login() {
 }
 
 function logout() {
-  const loggedInUser = localStorage.getItem("loggedInUser");
-
+  const loggedInUser = localStorage.getItem(USER_KEY);
+  
   if (loggedInUser) {
       localStorage.removeItem(`${loggedInUser}_session`);
   }
 
-  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem(USER_KEY);
   localStorage.removeItem(SESSION_KEY);
   sessionStorage.removeItem("currentSession");
 
-  // Refresh page to show login
-  location.reload();
+  location.reload(); // Refresh page to show login
 }
 
 function showEditor() {
@@ -242,12 +236,12 @@ function checkSession() {
       const currentSession = sessionStorage.getItem("currentSession");
 
       if (!activeSession || activeSession !== currentSession) {
-          logout();
+          logout(); // Logout if session is invalid or changed
       }
   }, 2000);
 }
 
-// Detect login changes across tabs/devices and log out if necessary
+// Detect session change across tabs and force logout
 window.addEventListener("storage", function (event) {
   if (event.key === SESSION_KEY) {
       const activeSession = localStorage.getItem(SESSION_KEY);
@@ -259,27 +253,25 @@ window.addEventListener("storage", function (event) {
   }
 });
 
-// Step 1: Clear session data on page load if invalid
+// Generate a unique session ID
+function generateSessionId() {
+  return Math.random().toString(36).substr(2, 12);
+}
+
+// On page load, check if session is still valid
 window.onload = function () {
   const activeSession = localStorage.getItem(SESSION_KEY);
   const currentSession = sessionStorage.getItem("currentSession");
 
   if (!activeSession || activeSession !== currentSession) {
-      // Remove only inactive sessions
-      localStorage.removeItem("loggedInUser");
+      localStorage.removeItem(USER_KEY);
       localStorage.removeItem(SESSION_KEY);
       sessionStorage.removeItem("currentSession");
   }
 
-  // Always show login page initially
   document.getElementById("loginContainer").classList.remove("hidden");
   document.getElementById("editorContainer").classList.add("hidden");
 };
-
-// Define the clearEditor function
-function clearEditor() {
-  document.getElementById("editor").innerHTML = "";
-}
 
 // Block Developer Tools
 document.addEventListener("contextmenu", (event) => event.preventDefault());
